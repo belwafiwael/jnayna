@@ -4,11 +4,16 @@ import 'express-async-errors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
+import { v2 as cloudinary } from 'cloudinary';
 import cors from 'cors';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 //database
 import { connectDB } from './db/connect.js';
 // routes
@@ -24,7 +29,7 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 app.use(express.static('./public'));
-app.use(fileUpload());
+app.use(fileUpload({ useTempFiles: true }));
 app.use(cors());
 
 app.get('/', (req, res) => {
