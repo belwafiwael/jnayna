@@ -2,24 +2,24 @@
 
 #### Setup Basic Express Server
 
-- [X] import express and assign to variable
-- [X] setup start port variable (5000) and start function
+- [x] import express and assign to variable
+- [x] setup start port variable (5000) and start function
 
 #### Connect To DB
 
-- [X] get connection string
-- [X] setup .env with MONGO_URL variable and assign the value
-- [X] import 'dotenv' and setup package
-- [X] import connect() and invoke in the starter
-- [X] restart the server
-- [X] mongoose V6 info
+- [x] get connection string
+- [x] setup .env with MONGO_URL variable and assign the value
+- [x] import 'dotenv' and setup package
+- [x] import connect() and invoke in the starter
+- [x] restart the server
+- [x] mongoose V6 info
 
 #### Basic Routes and Middleware
 
-- [X] setup / GET Route
-- [X] setup express.json() middleware
-- [X] setup 404 and errorHandler middleware
-- [X] import 'express-async-errors' package
+- [x] setup / GET Route
+- [x] setup express.json() middleware
+- [x] setup 404 and errorHandler middleware
+- [x] import 'express-async-errors' package
 
 #### 404 vs ErrorHandler Middleware
 
@@ -29,9 +29,9 @@
 
 #### User Model
 
-- [X] create models folder and User.js file
-- [X] create schema with name,email, password (all type:String)
-- [X] export mongoose model
+- [x] create models folder and User.js file
+- [x] create schema with name,email, password (all type:String)
+- [x] export mongoose model
 
 #### Validator Package
 
@@ -39,78 +39,78 @@
 
 #### Auth Routes Structure
 
-- [X] create controllers folder
-- [X] add authController file
-- [X] export (register,login,logout) functions
-- [X] res.send('some string value')
-- [X] create routes folder
-- [X] setup authRoutes file
-- [X] import all controllers
-- [X] setup three routes
-- [X] post('/register') post('/login') get('/logout')
-- [X] import authRoutes as authRouter in the app.js
-- [X] setup app.use('/api/v1/auth', authRouter)
+- [x] create controllers folder
+- [x] add authController file
+- [x] export (register,login,logout) functions
+- [x] res.send('some string value')
+- [x] create routes folder
+- [x] setup authRoutes file
+- [x] import all controllers
+- [x] setup three routes
+- [x] post('/register') post('/login') get('/logout')
+- [x] import authRoutes as authRouter in the app.js
+- [x] setup app.use('/api/v1/auth', authRouter)
 
 #### Test Routes in Postman
 
 #### Register Controller
 
-- [X] create user
-- [X] send response with entire user (only while testing)
-- [X] check if email already in use (schema and controller)
-- [X] ignore 'role'
-- [X] alternative 'admin' setup
+- [x] create user
+- [x] send response with entire user (only while testing)
+- [x] check if email already in use (schema and controller)
+- [x] ignore 'role'
+- [x] alternative 'admin' setup
 
 #### Handle Password
 
-- [X] UserSchema.pre('save') - hook
+- [x] UserSchema.pre('save') - hook
 - this points to User
 - bcrypt.genSalt - number of rounds
 - bcrypt.hash
 
 #### JWT
 
-- [X] require 'jsonwebtoken' package
-- [X] create jwt - jwt.sign(payload,secret,options)
-- [X] verify jwt - jwt.verify(token,secret)
-- [X] add variables in .env JWT_SECRET=jwtSecret and JWT_LIFETIME=1d
-- [X] restart the server !!!!
-- [X] refactor code, create jwt functions in utils
-- [X] refactor cookie code
-- [X] setup func attachCookiesToResponse
-- [X] accept payload(res, tokenUser)
-- [X] create token, setup cookie
-- [X] optionally send back the response
+- [x] require 'jsonwebtoken' package
+- [x] create jwt - jwt.sign(payload,secret,options)
+- [x] verify jwt - jwt.verify(token,secret)
+- [x] add variables in .env JWT_SECRET=jwtSecret and JWT_LIFETIME=1d
+- [x] restart the server !!!!
+- [x] refactor code, create jwt functions in utils
+- [x] refactor cookie code
+- [x] setup func attachCookiesToResponse
+- [x] accept payload(res, tokenUser)
+- [x] create token, setup cookie
+- [x] optionally send back the response
 
 #### Login Route
 
-- [X] check if email and password exist, if one missing return 400
-- [X] find user, if no user return 401
-- [X] check password, if does not match return 401
-- [X] if everything is correct, attach cookie
-  and send back the same response as in register
+- [x] check if email and password exist, if one missing return 400
+- [x] find user, if no user return 401
+- [x] check password, if does not match return 401
+- [x] if everything is correct, attach cookie
+      and send back the same response as in register
 
 #### Logout Route
 
-- [X] set token cookie equal to some string value
-- [X] set expires:new Date(Date.now())
+- [x] set token cookie equal to some string value
+- [x] set expires:new Date(Date.now())
 
 #### User Routes Structure
 
-- [X] add userController file
-- [X] export (getAllUsers,getSingleUser,showCurrentUser,updateUser,updateUserPassword) functions
-- [X] res.send('some string value')
-- [X] setup userRoutes file
-- [X] import all controllers
-- [X] setup just one route - router.route('/').get(getAllUsers);
-- [X] import userRoutes as userRouter in the app.js
-- [X] setup app.use('/api/v1/users', userRouter)
+- [x] add userController file
+- [x] export (getAllUsers,getSingleUser,showCurrentUser,updateUser,updateUserPassword) functions
+- [x] res.send('some string value')
+- [x] setup userRoutes file
+- [x] import all controllers
+- [x] setup just one route - router.route('/').get(getAllUsers);
+- [x] import userRoutes as userRouter in the app.js
+- [x] setup app.use('/api/v1/users', userRouter)
 
 #### GetAllUsers and GetSingleUser
 
-- [X] Get all users where role is 'user' and remove password
-- [X] Get Single User where id matches id param and remove password
-- [X] If no user 404
+- [x] Get all users where role is 'user' and remove password
+- [x] Get Single User where id matches id param and remove password
+- [x] If no user 404
 
 #### Authenticate User Setup
 
