@@ -1,8 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
 import { v2 as cloudinary } from 'cloudinary';
-import { fileURLToPath } from 'url';
-import path from 'path';
-import { dirname } from 'path';
 import Product from '../models/Product.js';
 import { NotFoundError, BadRequestError } from '../errors/customErrors.js';
 import { unlinkSync } from 'fs';
@@ -18,7 +15,7 @@ export const getAllProducts = async (req, res) => {
 };
 export const getSingleProduct = async (req, res) => {
   const { id: productId } = req.params;
-  const product = await Product.findOne({ _id: productId });
+  const product = await Product.findOne({ _id: productId }).populate('reviews');
   if (!product) throw new NotFoundError(`No product with id : ${productId}`);
   res.status(StatusCodes.OK).json({ product });
 };
